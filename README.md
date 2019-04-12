@@ -2,13 +2,14 @@
 
 Control a planet and avoid asteroids. The game ends if the planet runs out of lives and it is won if it has survived for a set time.
  
-MVP (DOM - CANVAS)
+	MVP (DOM - CANVAS)
  
 Moving the planet in all directions,
 Checking for collisions with asteroids.
 Set a timer.
  
-BACKLOG
+	BACKLOG
+
 Enemies:
 Comet: goes directly for the player.
 Great Asteroid: A bigger asteroid.
@@ -17,7 +18,7 @@ PowerUps (should get stored and be called when needed.)
 Watercloud: Life Up.
 Nova: destroy some asteroids.
  
-DATA STRUCTURE
+	DATA STRUCTURE
  
 Game.js:
  
@@ -92,7 +93,7 @@ Asteroid.prototype.draw(){
 }
  
 	
-STATES AND THEIR TRANSITIONS
+	STATES AND THEIR TRANSITIONS
  
  
 - buildMainMenuScreen(){
@@ -117,13 +118,13 @@ STATES AND THEIR TRANSITIONS
 	}
 }
  
-Tasks
+	Tasks
  
-Links
+	Links
  
  
 Git
 URls for the project repo and deploy
-[Link Repo](http://github.com)
+[Link Repo](https://github.com/EricCapdevila/A-Void)
 [Link Deploy](http://github.com)
  
