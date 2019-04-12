@@ -2,13 +2,13 @@
 
 Control a planet and avoid asteroids. The game ends if the planet runs out of lives and it is won if it has survived for a set time.
  
-MVP (DOM - CANVAS)
+--MVP (DOM - CANVAS)--
  
 Moving the planet in all directions,
 Checking for collisions with asteroids.
 Set a timer.
  
-BACKLOG
+--BACKLOG--
 
 Enemies:
 Comet: goes directly for the player.
@@ -18,9 +18,9 @@ PowerUps (should get stored and be called when needed.)
 Watercloud: Life Up.
 Nova: destroy some asteroids.
  
-DATA STRUCTURE
+--DATA STRUCTURE--
  
-Game.js:
+    -Game.js-
  
 Game(){
   this.canvas;
@@ -49,11 +49,9 @@ Game.prototype.updateAll(){
 Game.prototype.clearAll(){
 }
  
+     -Planet.js-
  
- 
-Planet.js:
- 
-	Character(){
+Character(){
   this.x;
   this.y;
   this.speed;
@@ -75,7 +73,7 @@ Planet.prototype.draw(){
 }
  
  
-Asteroid.js:
+ 	-Asteroid.js-
  
 Asteroid (){
 	 this.x;
@@ -97,24 +95,24 @@ STATES AND THEIR TRANSITIONS
  
  
 - buildMainMenuScreen(){
-	-destroyWinScreen(if ){
+       -destroyWinScreen(if ){
 	}
  
 }
 - buildGameScreen(){
-  -destroyMainMenuScreen(){
+        -destroyMainMenuScreen(){
 }
-  -destroyGameOverScreen(If){
+        -destroyGameOverScreen(If){
 }
  
 }
 
 - buildGameOverScreen(){
-  -destroyGameScreen(){
+        -destroyGameScreen(){
 	}
 }
 - buildWinScreen()
-  -destroyGameScreen()
+        -destroyGameScreen()
  
 Tasks
  
