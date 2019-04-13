@@ -2,8 +2,8 @@
 const mainElement = document.querySelector('main');
 
 function build(elementAdd){
-   mainElement.innerHTML = elementAdd;
-   return mainElement;
+  mainElement.innerHTML = elementAdd;
+  return mainElement;
 }
 
  
@@ -18,15 +18,23 @@ function buildIntroScreen(){
 }
 
 function buildGameScreen(){
-  const  gameScreen = build('<canvas></canvas>');
-  let timer = 2; // change to 60
+  const  gameScreen = build('<canvas id = "canvas" ></canvas>');
+  let timer = 5; // change to 60
   setInterval(function(){
    --timer;
    if(timer === 0){
-    buildWinScreen()
-    clearInterval;
+      buildWinScreen();
+      clearInterval;
     }
+     return timer;
    },1000);  
+   
+   const canvas = document.getElementById("canvas");
+   let game = new Game(canvas,timer);
+
+   game.startLoop();
+
+ 
 }
 
 
@@ -39,4 +47,5 @@ function buildWinScreen(){
  const mainMenuButton = document.getElementById("main-menu");
  mainMenuButton.addEventListener("click", buildIntroScreen);
 }
+
 buildIntroScreen()
