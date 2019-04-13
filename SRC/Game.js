@@ -1,7 +1,4 @@
 
- 
- 
- 
 class Game{
   constructor(canvas){
     this.canvas = canvas;
@@ -25,7 +22,6 @@ class Game{
       this.clear();
       this.updatePositions();
       this.draw();
-      console.log("cat")
       requestAnimationFrame(loop);
     }
     requestAnimationFrame(loop);
