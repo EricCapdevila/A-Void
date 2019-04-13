@@ -1,16 +1,55 @@
+
+*{
+ padding:0;
+ margin:0;
+ box-sizing: border-box;
+ color: white;
+}
+
 .container{
-
-
+  height: auto;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  padding: 6%  ;
+  background-color:rgb(2, 2, 95);
 }
+
+#Intro{
+  width:80%;
+  height:80vh;
+  background-color: rgb(31, 79, 141);
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  font-size: 3em;
+  padding: 5%;
+}
+
+#Intro h1, p, div{
+  width: 100%;
+  text-align: center;
+}
+
 #startButton{
-
-
+  border: rgb(2, 2, 95) solid 5px;
+  width: 40%;
+  height: 40%;
+  border-radius: 30
 }
-.time{
 
-
+#startButton span{
+  color:rgb(2, 2, 95);
+  font-weight: bold;
+  font-size: 2em;
+  display:block;
 }
-.lives{
 
-  
+canvas{
+width: 80%;
+height:80vh;
+border: 2px solid black;
+background-color: gray;
 }
+
+

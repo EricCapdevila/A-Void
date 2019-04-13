@@ -11,16 +11,13 @@ function build(elementAdd){
 
 function buildIntroScreen(){
   const introScreen =  build(
-    '<section><h1>A-Void</h1> <p>¡¡Your star has left you because she apparently needs more Space. Travel through the void to find a new one!!</p><button id = "startButton"> Start </button></section>');
+    '<section id = "Intro" ><h1>A-Void</h1> <p>Your star has left you because she apparently needs more Space. Travel through the void to find a new one!!</p><div><button id = "startButton"><span>START JOURNEY<span> </button><div></section>');
     const StartButton = document.getElementById("startButton");
   StartButton.addEventListener("click", buildGameScreen);
 }
 
 function buildGameScreen(){
-  
-  console.log("cat");
-  const  gameScreen = build('<div class= "time" ></div> <div class = "lives" ></div><canvas></canvas>');
-  
+  const  gameScreen = build('<canvas></canvas>');
 }
 
 
