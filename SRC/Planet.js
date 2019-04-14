@@ -6,7 +6,7 @@ class Planet{
     this.size = 10;
     this.lives = 3;
     this.x = 150;
-    this.y = 80;
+    this.y = 150/2;
     this.speedX= 0
     this.speedY= 0
   }
@@ -15,16 +15,21 @@ class Planet{
     this.ctx.fillRect(this.x - this.size/2, this.y-this.size/2, this.size, this.size);
   }
   move(){
-   // if(this.x < this.canvas.offsetWidth || this.x > 0 ){
+    if(this.x > 300){
+      this.x = 300;
+    }else if(this.x < 0){
+      this.x = 0;
+    }else{
       this.x = this.x + this.speedX;
-      
-    //}else if (this.y < this.canvas.offsetHeight || this.y > 0){
+    }
+    if(this.y > 150){
+      this.y = 150;
+    }else if(this.y < 0){
+      this.y = 0;
+    }else{
       this.y = this.y + this.speedY;
-    //}
+    }
   }
 }
-
-
-
 
 

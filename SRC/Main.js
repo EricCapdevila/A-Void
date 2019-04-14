@@ -46,17 +46,15 @@ function buildGameScreen(){
       case 40:
       game.planet.speedY = 2;
       break;
-    }
-      
-   })
-   document.addEventListener("keyup", function(event){
-     if (event.keyCode === 37 || event.keyCode === 39){
-       game.planet.speedX = 0;
-     }else if(event.keyCode === 38 || event.keyCode === 40)
+    } 
+    })
+  document.addEventListener("keyup", function(event){
+    if (event.keyCode === 37 || event.keyCode === 39){
+      game.planet.speedX = 0;
+    }else if(event.keyCode === 38 || event.keyCode === 40)
       game.planet.speedY = 0;
     })
- 
-}
+   }
 
 
 function buildDeathSCreen(){
@@ -65,7 +63,7 @@ function buildDeathSCreen(){
 }
 function buildWinScreen(){
   const  winScreen = build('<section id = "win"><h1>YOU SURVIVED!</h1> <p>You have found a new star! Shinier and bigger than the old one</p><div><button id = "main-menu"><span>MENU<span> </button><div></section>');
- const mainMenuButton = document.getElementById("main-menu");
+  const mainMenuButton = document.getElementById("main-menu");
  mainMenuButton.addEventListener("click", buildIntroScreen);
 }
 
