@@ -33,7 +33,7 @@ class Asteroid{
     };
     this.comingFrom = "" 
     this.position()
-    this.speed = 2.5;
+    this.speed = 2;
     this.randomDeviation = function(){
       let availableSpeed = [-1.5 ,-1 , -0.5 ,0 , 0.5, 1, 1.5];
       return availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
@@ -46,7 +46,6 @@ class Asteroid{
     this.ctx.fillRect(this.x, this.y, this.size, this.size);
   }
   move(){
-    
     if (this.comingFrom === "left"){;
       this.x = this.x + this.speed;
       this.y = this.y + this.deviation;
@@ -60,6 +59,9 @@ class Asteroid{
       this.y = this.y - this.speed;
       this.x = this.x + this.deviation;
     }
-    }
   }
+  collision(){
+ 
 
+  }
+}

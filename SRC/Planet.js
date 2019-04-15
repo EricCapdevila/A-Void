@@ -1,17 +1,19 @@
 
 class Planet{
-  constructor(canvas){
+  constructor(canvas,array){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
     this.size = 7;
     this.lives = 3;
     this.x = 150;
     this.y = 150/2;
-    this.speedX= 0
-    this.speedY= 0
-  }
-  draw (){
-    this.ctx.fillStyle = 'blue';
+    this.speedX = 0;
+    this.speedY = 0;
+    this.asteroids = array; 
+    }
+  
+  draw(){
+    this.ctx.fillStyle = 'green';
     this.ctx.fillRect(this.x - this.size/2, this.y-this.size/2, this.size, this.size);
   }
   move(){
@@ -29,7 +31,25 @@ class Planet{
     }else{
       this.y = this.y + this.speedY;
     }
+  collision(){
+    this.asteroids.forEach(asteroid){
+      let leftSide = this.x -this.size/2;
+      let topSide = this.y - this.size/2;
+      let rightSide = this.x + this.size/2;
+      let downSide = this.y + this.size/2;
+
+      if(leftSide > asteroid.x + asteroid.size/2 || rightSide < asteroid.x - asteroid.size/2)// to do the next ones
+
+    }
+  
+    }
+
   }
-}
+ 
+
+  
+  
+
+
 
 

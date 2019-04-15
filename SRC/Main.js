@@ -17,7 +17,7 @@ function buildIntroScreen(){
 
 function buildGameScreen(){
   const  gameScreen = build('<canvas id = "canvas" ></canvas>');
-  let timer = 10; // change to 60
+  let timer = 60; // change to 60
   setInterval(function(){
    --timer;
    if(timer === 0){
@@ -48,12 +48,13 @@ function buildGameScreen(){
       break;
     } 
     })
+
   document.addEventListener("keyup", function(event){
     if (event.keyCode === 37 || event.keyCode === 39){
       game.planet.speedX = 0;
     }else if(event.keyCode === 38 || event.keyCode === 40)
       game.planet.speedY = 0;
-    })
+    }) 
    }
 
 
