@@ -26,11 +26,13 @@ class Asteroid{
       }else if(position === right){
         this.comingFrom = "right"
       }
-      console.log(position);
+     
       this.x = position[0];
       this.y = position[1];
     
     };
+    this.x = 0;
+    this.y = 0;
     this.comingFrom = "" 
     this.position()
     this.speed = 2;
@@ -60,8 +62,7 @@ class Asteroid{
       this.x = this.x + this.deviation;
     }
   }
-  collision(){
- 
-
+  destroy(){
+    this.ctx.clearRect(this.x - this.size/2, this.y - this.size/2, this.size, this.size);
   }
 }

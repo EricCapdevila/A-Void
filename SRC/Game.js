@@ -18,17 +18,19 @@ class Game{
   }
   draw(){
     this.planet.draw();
+    this.planet.collision();
     this.asteroids.forEach(function (asteroid){
-      asteroid.draw(); // except if it is colliding.
+      asteroid.draw(); 
     })
   }
   startLoop(){
     
     setInterval(() => {
-      this.asteroids.push (new Asteroid (canvas));
+      this.asteroids.push (new Asteroid (this.canvas));
     },250);
     
     this.planet = new Planet(canvas, this.asteroids);
+    
 
     const loop =()=>{
       this.clear();

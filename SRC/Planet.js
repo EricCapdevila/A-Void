@@ -31,16 +31,22 @@ class Planet{
     }else{
       this.y = this.y + this.speedY;
     }
+  }
   collision(){
-    this.asteroids.forEach(asteroid){
-      let leftSide = this.x -this.size/2;
-      let topSide = this.y - this.size/2;
-      let rightSide = this.x + this.size/2;
-      let downSide = this.y + this.size/2;
+    let leftSide = this.x -this.size/2;
+    let topSide = this.y - this.size/2;
+    let rightSide = this.x + this.size/2;
+    let downSide = this.y + this.size/2;
 
-      if(leftSide > asteroid.x + asteroid.size/2 || rightSide < asteroid.x - asteroid.size/2)// to do the next ones
+    console.log(this.asteroids[0]);
 
-    }
+    this.asteroids.forEach(function(asteroid){
+      if(leftSide < asteroid.x + asteroid.size/2 && rightSide > asteroid.x - asteroid.size/2 && topSide > asteroid.y + asteroid.size/2 && downSide < asteroid.size/2){
+        this.lives--;
+        asteroid.destroy();
+        
+      }
+    });
   
     }
 
