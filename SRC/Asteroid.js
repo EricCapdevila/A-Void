@@ -27,13 +27,13 @@ class Asteroid{
         this.comingFrom = "right"
       }
       console.log(position);
-      this.x= position[0];
+      this.x = position[0];
       this.y = position[1];
     
     };
     this.comingFrom = "" 
     this.position()
-    this.speed = 3;
+    this.speed = 2.5;
     this.randomDeviation = function(){
       let availableSpeed = [-1.5 ,-1 , -0.5 ,0 , 0.5, 1, 1.5];
       return availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
