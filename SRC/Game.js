@@ -20,7 +20,10 @@ class Game{
 
   startLoop(){
     this.planet = new Planet(canvas);
+    
     this.asteroids = new Asteroid(canvas);
+     
+    
     const loop =()=>{
       this.clear();
       this.updatePositions();

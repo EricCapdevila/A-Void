@@ -5,8 +5,8 @@ class Asteroid{
     this.ctx = this.canvas.getContext("2d");
     this.size = 5;
     this.position = function (){
-      let randomY = Math.floor(Math.random()*150);
-      let randomX = Math.floor(Math.random()*300);
+      let randomY = Math.floor((Math.random()*this.canvas.height - this.size));
+      let randomX = Math.floor((Math.random()*this.canvas.width - this.size));
       
       let top = [randomX, -10];
       let bottom = [randomX, 160];
@@ -15,6 +15,7 @@ class Asteroid{
       
       let spawnPosibilities = [top, bottom, left, right]
       let position = spawnPosibilities[Math.floor(Math.random()*spawnPosibilities.length)];
+      
 
       if(position === top){
         this.comingFrom = "top"
@@ -25,13 +26,19 @@ class Asteroid{
       }else if(position === right){
         this.comingFrom = "right"
       }
-
-      return position;
+      console.log(position);
+      this.x= position[0];
+      this.y = position[1];
+    
     };
     this.comingFrom = "" 
-    this.x = this.position()[0];
-    this.y = this.position()[1];
+    this.position()
     this.speed = 3;
+    this.randomDeviation = function(){
+      let availableSpeed = [-1.5 ,-1 , -0.5 ,0 , 0.5, 1, 1.5];
+      return availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
+    }
+    this.deviation = this.randomDeviation();
   }
 
   draw (){
@@ -39,24 +46,20 @@ class Asteroid{
     this.ctx.fillRect(this.x, this.y, this.size, this.size);
   }
   move(){
-/*
-    let availableSpeed = [-2 ,-1 ,0 , 1, 2];
-    let randomSpeed = availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
-  */     
     
     if (this.comingFrom === "left"){;
       this.x = this.x + this.speed;
+      this.y = this.y + this.deviation;
     }else if(this.comingFrom === "right"){
       this.x = this.x - this.speed;
-      //this.y = this.y + randomSpeed;
+      this.y = this.y + this.deviation;
     }else if(this.comingFrom === "top"){
       this.y = this.y + this.speed;
-      //this.x = this.x + randomSpeed;
+      this.x = this.x + this.deviation;
     }else if(this.comingFrom === "bottom"){
       this.y = this.y - this.speed;
-     // this.x = this.x + randomSpeed;
+      this.x = this.x + this.deviation;
     }
-    
     }
   }
 
