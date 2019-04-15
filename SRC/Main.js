@@ -6,7 +6,6 @@ function build(elementAdd){
   return mainElement;
 }
 
- //window.addEventListener("load", buildIntroScreen());
 
 function buildIntroScreen(){
   const introScreen =  build(
@@ -27,7 +26,7 @@ function buildGameScreen(){
    },1000);  
    
    const canvas = document.getElementById("canvas");
-   
+  
    let game = new Game(canvas);
 
    game.startLoop();

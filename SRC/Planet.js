@@ -10,11 +10,16 @@ class Planet{
     this.speedX = 0;
     this.speedY = 0;
     this.asteroids = array; 
-    }
-  
+    
+  }
+
+
+
   draw(){
     this.ctx.fillStyle = 'green';
     this.ctx.fillRect(this.x - this.size/2, this.y-this.size/2, this.size, this.size);
+    
+    
   }
   move(){
     if(this.x > 300){
@@ -38,7 +43,7 @@ class Planet{
     let rightSide = this.x + this.size/2;
     let downSide = this.y + this.size/2;
 
-    console.log(this.asteroids[0]);
+    //console.log(this.asteroids[3]); I CAN ACCESS THE ASTEROID OBJECT IN THE ARRAY BUT NOT THE KEY-VALUES
 
     this.asteroids.forEach(function(asteroid){
       if(leftSide < asteroid.x + asteroid.size/2 && rightSide > asteroid.x - asteroid.size/2 && topSide > asteroid.y + asteroid.size/2 && downSide < asteroid.size/2){
@@ -47,9 +52,7 @@ class Planet{
         
       }
     });
-  
     }
-
   }
  
 
