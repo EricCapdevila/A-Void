@@ -45,7 +45,7 @@ class Planet{
     this.asteroids.forEach((asteroid)=>{
       //console.log(leftSide < asteroid.x + asteroid.size/2 && rightSide > asteroid.x - asteroid.size/2)
       //console.log(topSide > asteroid.y + asteroid.size/2 && downSide < asteroid.y - asteroid.size/2)
-      if(leftSide < asteroid.x + asteroid.size/2 && rightSide > asteroid.x - asteroid.size/2 &&  topSide > asteroid.y + asteroid.size/2 && downSide < asteroid.y - asteroid.size/2){
+      if(leftSide < asteroid.x + asteroid.size/2 && rightSide > asteroid.x - asteroid.size/2 /*&&  topSide > asteroid.y + asteroid.size/2 && downSide < asteroid.y - asteroid.size/2*/){
         this.lives--;
        this.asteroids.splice(asteroid, 1);      
       }
