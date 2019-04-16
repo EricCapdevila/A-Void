@@ -3,20 +3,19 @@ class Planet{
   constructor(canvas,array){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.size = 10;
+    this.size = 15;
     this.lives = 3;
     this.x = 150;
     this.y = 150/2;
     this.speedX = 0;
     this.speedY = 0;
     this.asteroids = array; 
-    
   }
 
   draw(){
     //this.ctx.fillStyle = 'green';
     //this.ctx.fillRect(this.x - this.size/2, this.y-this.size/2, this.size, this.size);
-    let planet = new Image();
+    let planet = new Image(15, 15);
     planet.src = '/material/planetSprite.png';
     this.ctx.drawImage(planet, this.x, this.y, this.size, this.size);
     
@@ -42,16 +41,13 @@ class Planet{
     let topSide = this.y - this.size/2;
     let rightSide = this.x + this.size/2;
     let downSide = this.y + this.size/2;
-
-    //console.log(this.asteroids[3].x); //I CAN ACCESS THE ASTEROID OBJECT IN THE ARRAY BUT NOT THE KEY-VALUES
-
-    this.asteroids.forEach(function(asteroid){
- 
-      if(leftSide < asteroid.x + asteroid.size/2 && rightSide > asteroid.x - asteroid.size/2 && topSide > asteroid.y + asteroid.size/2 && downSide < asteroid.size/2){
+       
+    this.asteroids.forEach((asteroid)=>{
+      //console.log(leftSide < asteroid.x + asteroid.size/2 && rightSide > asteroid.x - asteroid.size/2)
+      //console.log(topSide > asteroid.y + asteroid.size/2 && downSide < asteroid.y - asteroid.size/2)
+      if(leftSide < asteroid.x + asteroid.size/2 && rightSide > asteroid.x - asteroid.size/2 &&  topSide > asteroid.y + asteroid.size/2 && downSide < asteroid.y - asteroid.size/2){
         this.lives--;
-       this.asteroids.splice(asteroid, 1);
-       console.log('touched');
-        
+       this.asteroids.splice(asteroid, 1);      
       }
     });
     }

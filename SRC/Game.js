@@ -27,11 +27,13 @@ class Game{
     })
   }
   draw(){
-    this.ctx.fillStyle = 'white';
-    this.ctx.font = "10px Arial";
-    this.ctx.fillText(this.timeLeft , 10, 10);
+    this.ctx.fillStyle = 'skyblue';
+    this.ctx.font = "15px Arial";
+    this.ctx.fillText(this.timeLeft , 10, 15);
+    this.ctx.fillStyle = 'skyblue';
+    this.ctx.font = "15px Arial";
+    this.ctx.fillText("♥" + this.planet.lives , 10, 30);
     this.planet.draw();
-    this.planet.collision();
     this.asteroids.forEach(function (asteroid){
       asteroid.draw(); 
     })
@@ -43,11 +45,13 @@ class Game{
     },250);
     
     this.planet = new Planet(canvas, this.asteroids);
+    
     this.timer();    
 
     const loop =()=>{
       this.clear();
       this.updatePositions();
+      this.planet.collision();
       this.draw();
       requestAnimationFrame(loop);
     }
