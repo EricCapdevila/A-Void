@@ -42,6 +42,11 @@ class Asteroid{
     }
     this.deviation = this.randomDeviation();
     this.collision = false;
+    this.lifeTime = 2;
+    this.timer = setInterval(() => {
+        --this.lifeTime;
+      },1000);
+   
   }
 
   draw (){

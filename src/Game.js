@@ -41,9 +41,11 @@ class Game{
 
   destroyAsteroids(){
     this.asteroids.forEach((e)=>{
-      if(e.collision){
+     
+      if(e.collision||e.lifeTime===0){
         let index = this.asteroids.indexOf(e);
         this.asteroids.splice(index,1);
+        clearInterval(e.timer)
       }
     });
   }
