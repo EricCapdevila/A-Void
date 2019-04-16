@@ -31,7 +31,7 @@ class Game{
     this.ctx.font = "10px Arial";
     this.ctx.fillText(this.timeLeft , 10, 10);
     this.planet.draw();
-    //this.planet.collision();
+    this.planet.collision();
     this.asteroids.forEach(function (asteroid){
       asteroid.draw(); 
     })

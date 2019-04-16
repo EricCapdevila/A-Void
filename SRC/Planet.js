@@ -43,12 +43,14 @@ class Planet{
     let rightSide = this.x + this.size/2;
     let downSide = this.y + this.size/2;
 
-    //console.log(this.asteroids[3]); I CAN ACCESS THE ASTEROID OBJECT IN THE ARRAY BUT NOT THE KEY-VALUES
+    //console.log(this.asteroids[3].x); //I CAN ACCESS THE ASTEROID OBJECT IN THE ARRAY BUT NOT THE KEY-VALUES
 
     this.asteroids.forEach(function(asteroid){
+ 
       if(leftSide < asteroid.x + asteroid.size/2 && rightSide > asteroid.x - asteroid.size/2 && topSide > asteroid.y + asteroid.size/2 && downSide < asteroid.size/2){
         this.lives--;
-        asteroid.destroy();
+       this.asteroids.splice(asteroid, 1);
+       console.log('touched');
         
       }
     });
