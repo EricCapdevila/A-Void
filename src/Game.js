@@ -49,6 +49,11 @@ class Game{
       }
     });
   }
+  checkPlanet(){
+   if(this.planet.lives===0){
+    buildDeathSCreen();
+    }
+  }
   startLoop(){
       setInterval(() => {
       this.asteroids.push (new Asteroid (this.canvas));
@@ -64,6 +69,7 @@ class Game{
       this.planet.collision();
       this.draw();
       this.destroyAsteroids();
+      this.checkPlanet();
       requestAnimationFrame(loop);
     }
     requestAnimationFrame(loop);

@@ -58,7 +58,10 @@ function buildGameScreen(){
 
 
 function buildDeathSCreen(){
-
+  const deathScreen =  build(
+    '<section id = "Death" ><h1>YOU LOST</h1> <p></p><div><button id = "retryButton"><span>RETRY<span> </button><div></section>');
+    const retryButton = document.getElementById("retryButton");
+  retryButton.addEventListener("click", buildGameScreen);
 
 }
 function buildWinScreen(){
