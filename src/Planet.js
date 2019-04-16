@@ -41,20 +41,16 @@ class Planet{
     let topSide = this.y - this.radius/2;
     let rightSide = this.x + this.radius/2;
     let downSide = this.y + this.radius/2;
-
-
-       
+ 
     this.asteroids.forEach((asteroid,index)=>{
       //console.log(leftSide < asteroid.x + asteroid.radius/2 && rightSide > asteroid.x - asteroid.radius/2)
       //console.log(topSide > asteroid.y + asteroid.radius/2 && downSide < asteroid.y - asteroid.radius/2)
       const distance = Math.sqrt((this.x - asteroid.x)**2+(this.y-asteroid.y)**2)
     
-
       if(distance < this.radius/2+asteroid.radius/2){
         this.lives--;
-        console.log(this.asteroids) 
-       this.asteroids.splice(asteroid, 1);  
-       console.log(this.asteroids)    
+        asteroid.collision= true;
+          
       }
     });
     }

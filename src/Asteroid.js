@@ -41,6 +41,7 @@ class Asteroid{
       return availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
     }
     this.deviation = this.randomDeviation();
+    this.collision = false;
   }
 
   draw (){
@@ -63,4 +64,7 @@ class Asteroid{
     }
   }
 
-}
+     
+  }
+
+

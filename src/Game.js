@@ -38,9 +38,17 @@ class Game{
       asteroid.draw(); 
     })
   }
+
+  destroyAsteroids(){
+    this.asteroids.forEach((e)=>{
+      if(e.collision){
+        let index = this.asteroids.indexOf(e);
+        this.asteroids.splice(index,1);
+      }
+    });
+  }
   startLoop(){
-    
-    setInterval(() => {
+      setInterval(() => {
       this.asteroids.push (new Asteroid (this.canvas));
     },250);
     
@@ -53,6 +61,7 @@ class Game{
       this.updatePositions();
       this.planet.collision();
       this.draw();
+      this.destroyAsteroids();
       requestAnimationFrame(loop);
     }
     requestAnimationFrame(loop);
