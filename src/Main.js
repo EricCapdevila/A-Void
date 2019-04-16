@@ -16,7 +16,7 @@ function buildIntroScreen(){
 
 function buildGameScreen(){
   const  gameScreen = build('<canvas id = "canvas" ></canvas>');
-  let timer = 60; // change to 60
+  let timer = 60; 
   setInterval(function(){
    --timer;
    if(timer === 0){

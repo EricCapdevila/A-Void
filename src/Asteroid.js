@@ -3,10 +3,10 @@ class Asteroid{
   constructor(canvas){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.size = 5;
+    this.radius = 5;
     this.position = function (){
-      let randomY = Math.floor((Math.random()*this.canvas.height - this.size));
-      let randomX = Math.floor((Math.random()*this.canvas.width - this.size));
+      let randomY = Math.floor((Math.random()*this.canvas.height - this.radius));
+      let randomX = Math.floor((Math.random()*this.canvas.width - this.radius));
       
       let top = [randomX, -10];
       let bottom = [randomX, 160];
@@ -45,7 +45,7 @@ class Asteroid{
 
   draw (){
     this.ctx.fillStyle = 'red';
-    this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    this.ctx.fillRect(this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
   }
   move(){
     if (this.comingFrom === "left"){;
@@ -62,7 +62,5 @@ class Asteroid{
       this.x = this.x + this.deviation;
     }
   }
-  destroy(){
-    this.ctx.clearRect(this.x - this.size/2, this.y - this.size/2, this.size, this.size);
-  }
+
 }
