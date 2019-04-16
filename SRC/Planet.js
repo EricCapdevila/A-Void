@@ -3,7 +3,7 @@ class Planet{
   constructor(canvas,array){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.size = 7;
+    this.size = 10;
     this.lives = 3;
     this.x = 150;
     this.y = 150/2;
@@ -13,12 +13,12 @@ class Planet{
     
   }
 
-
-
   draw(){
-    this.ctx.fillStyle = 'green';
-    this.ctx.fillRect(this.x - this.size/2, this.y-this.size/2, this.size, this.size);
-    
+    //this.ctx.fillStyle = 'green';
+    //this.ctx.fillRect(this.x - this.size/2, this.y-this.size/2, this.size, this.size);
+    let planet = new Image();
+    planet.src = '/material/planetSprite.png';
+    this.ctx.drawImage(planet, this.x, this.y, this.size, this.size);
     
   }
   move(){
