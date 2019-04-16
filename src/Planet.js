@@ -13,8 +13,6 @@ class Planet{
   }
 
   draw(){
-    //this.ctx.fillStyle = 'green';
-    //this.ctx.fillRect(this.x - this.radius/2, this.y-this.radius/2, this.radius, this.radius);
     let planet = new Image(15, 15);
     planet.src = '/material/planetSprite.png';
     this.ctx.drawImage(planet, this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);

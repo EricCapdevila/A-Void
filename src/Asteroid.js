@@ -3,7 +3,7 @@ class Asteroid{
   constructor(canvas){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.radius = 5;
+    this.radius = 13;
     this.position = function (){
       let randomY = Math.floor((Math.random()*this.canvas.height - this.radius));
       let randomX = Math.floor((Math.random()*this.canvas.width - this.radius));
@@ -35,14 +35,14 @@ class Asteroid{
     this.y = 0;
     this.comingFrom = "" 
     this.position()
-    this.speed = 2;
+    this.speed = 1.5;
     this.randomDeviation = function(){
       let availableSpeed = [-1.5 ,-1 , -0.5 ,0 , 0.5, 1, 1.5];
       return availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
     }
     this.deviation = this.randomDeviation();
     this.collision = false;
-    this.lifeTime = 2;
+    this.lifeTime = 4;
     this.timer = setInterval(() => {
         --this.lifeTime;
       },1000);
@@ -50,8 +50,9 @@ class Asteroid{
   }
 
   draw (){
-    this.ctx.fillStyle = 'red';
-    this.ctx.fillRect(this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
+    let asteroid = new Image(15, 15);
+    asteroid.src = '/material/asteroid.png';
+    this.ctx.drawImage(asteroid, this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
   }
   move(){
     if (this.comingFrom === "left"){;
