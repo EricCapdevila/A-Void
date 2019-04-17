@@ -23,7 +23,6 @@ body {
 section{
   width:80%;
   height:80vh;
-  background-color: rgba(18, 17, 104, 0.5);
   display: flex;
   flex-wrap: wrap;
   justify-items: center;

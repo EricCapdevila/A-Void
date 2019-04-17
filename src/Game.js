@@ -50,17 +50,19 @@ class Game{
     });
   }
   checkPlanet(){
-   if(this.planet.lives===0){
-    buildDeathSCreen();
+    if(this.planet.lives===0){
+      buildDeathSCreen();
+      this.planet.dead= true;
     }
   }
+  
   startLoop(){
       setInterval(() => {
       this.asteroids.push (new Asteroid (this.canvas));
     },250);
     
     this.planet = new Planet(canvas, this.asteroids);
-    
+
     this.timer();    
 
     const loop =()=>{
@@ -70,9 +72,16 @@ class Game{
       this.draw();
       this.destroyAsteroids();
       this.checkPlanet();
+
       requestAnimationFrame(loop);
     }
-    requestAnimationFrame(loop);
+     
+       requestAnimationFrame(loop);
+     
+    
+      
+     
+ 
   }
 }
  
