@@ -15,18 +15,8 @@ function buildIntroScreen(){
 }
 
 function buildGameScreen(){
-  const  gameScreen = build('<canvas id = "canvas" ></canvas>');
-  //let timer = 2; 
-  //let interval = setInterval(function(){
-  //--timer;
-  //if(timer === 0 ){
-// game.gameEnd = true;
-// buildWinScreen();
-  //  clearInterval(interval);
-   // }
-   //},1000);  
-   
-   const canvas = document.getElementById("canvas");
+  const  gameScreen = build('<canvas id = "canvas" ></canvas>');   
+  const canvas = document.getElementById("canvas");
   
    let game = new Game(canvas);
 

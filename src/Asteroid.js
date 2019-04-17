@@ -35,7 +35,7 @@ class Asteroid{
     this.y = 0;
     this.comingFrom = "" 
     this.position()
-    this.speed = 1.5;
+    this.speed = 2.5;
     this.randomDeviation = function(){
       let availableSpeed = [-1.5 ,-1 , -0.5 ,0 , 0.5, 1, 1.5];
       return availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
@@ -51,7 +51,7 @@ class Asteroid{
 
   draw (){
     let asteroid = new Image(15, 15);
-    asteroid.src = '/material/asteroid.png';
+    asteroid.src = '../material/asteroid.png';
     this.ctx.drawImage(asteroid, this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
   }
   move(){

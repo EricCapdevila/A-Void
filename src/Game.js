@@ -21,13 +21,8 @@ class Game{
         this.gameEnd = true;
           buildDeathScreen()
         clearInterval(timerID);
-      }
-    },1000);
-    
-   // if (this.timeLeft<0){
-      //clearInterval(timerID);
-      //this.timeLeft = 0;
-      //console.log("below 0");
+        }
+      },1000);
     }
   clear(){
     this.ctx.clearRect(0,0,this.canvas.offsetWidth, this.canvas.offsetHeight);
