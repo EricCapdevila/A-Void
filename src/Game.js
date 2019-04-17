@@ -80,8 +80,10 @@ class Game{
       
       requestAnimationFrame(loop);
     }
-     if(this.gameEnd === false|| this.planet.dead=== false)
+     if(this.gameEnd === false){
        requestAnimationFrame(loop);
+     }
+       
      
   }
 }
