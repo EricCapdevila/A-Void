@@ -15,7 +15,7 @@ class Planet{
 
   draw(){
     let planet = new Image(15, 15);
-    planet.src = './material/planetSprite.png';
+    planet.src = '../material/planetSprite.png';
     this.ctx.drawImage(planet, this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
   }
   move(){
