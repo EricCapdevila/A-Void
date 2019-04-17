@@ -15,8 +15,9 @@ class Game{
       if(this.timeLeft<0){
          this.gameEnd = true;
           buildWinScreen();
-          clearInterval(timerGame);
-      }else if(this.planet.lives===0){
+          clearInterval(timerGame);}
+
+      if(this.planet.lives===0){
         this.gameEnd = true;
           buildDeathScreen()
           clearInterval(timerGame);
