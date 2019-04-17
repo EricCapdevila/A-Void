@@ -17,7 +17,7 @@ body {
   padding: 100px;
   background-color: rgb(1, 1, 54);
   overflow: hidden;
-  background-image: url('/material/starBackground.jpg');
+  background-image: url('./material/starBackground.jpg');
 }
 
 section{
