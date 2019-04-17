@@ -3,7 +3,7 @@ class Planet{
   constructor(canvas,array){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.radius = 15;
+    this.radius = 20;
     this.lives = 3;
     this.x = 150;
     this.y = 150/2;
@@ -14,8 +14,8 @@ class Planet{
   }
 
   draw(){
-    let planet = new Image(15, 15);
-    planet.src = './material/planetSprite.png';
+    let planet = new Image(1000, 1000);
+    planet.src = './material/planetEarth.png';
     this.ctx.drawImage(planet, this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
   }
   move(){
