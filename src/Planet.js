@@ -10,13 +10,13 @@ class Planet{
     this.speedX = 0;
     this.speedY = 0;
     this.asteroids = array; 
+    this.dead = false;
   }
 
   draw(){
     let planet = new Image(15, 15);
     planet.src = '/material/planetSprite.png';
     this.ctx.drawImage(planet, this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
-
   }
   move(){
     if(this.x > this.canvas.width-this.radius){
@@ -39,6 +39,7 @@ class Planet{
     let topSide = this.y - this.radius/2;
     let rightSide = this.x + this.radius/2;
     let downSide = this.y + this.radius/2;
+    
  
     this.asteroids.forEach((asteroid,index)=>{
       //console.log(leftSide < asteroid.x + asteroid.radius/2 && rightSide > asteroid.x - asteroid.radius/2)
@@ -48,7 +49,7 @@ class Planet{
       if(distance < this.radius/2+asteroid.radius/2){
         this.lives--;
         asteroid.collision= true;
-          
+                
       }
     });
     }

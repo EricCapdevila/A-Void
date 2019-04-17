@@ -16,14 +16,15 @@ function buildIntroScreen(){
 
 function buildGameScreen(){
   const  gameScreen = build('<canvas id = "canvas" ></canvas>');
-  let timer = 60; 
-  setInterval(function(){
-   --timer;
-   if(timer === 0){
-      buildWinScreen();
-      clearInterval;
-    }
-   },1000);  
+  //let timer = 2; 
+  //let interval = setInterval(function(){
+  //--timer;
+  //if(timer === 0 ){
+// game.gameEnd = true;
+// buildWinScreen();
+  //  clearInterval(interval);
+   // }
+   //},1000);  
    
    const canvas = document.getElementById("canvas");
   
@@ -57,7 +58,7 @@ function buildGameScreen(){
    }
 
 
-function buildDeathSCreen(){
+function buildDeathScreen(){
   const deathScreen =  build(
     '<section id = "Death" ><h1>YOU LOST</h1> <p></p><div><button id = "retryButton"><span>RETRY<span> </button><div></section>');
     const retryButton = document.getElementById("retryButton");

@@ -6,12 +6,24 @@ class Game{
     this.planet = null;
     this.asteroids= [];   
     this.timeLeft = 60; 
+    this.gameEnd = false;
   }
-  timer(){
+  timerSetGameEnd(){
     let timerID = setInterval(() => {
       --this.timeLeft;
-      
+
+      if(this.timeLeft<0){
+         this.gameEnd = true;
+          buildWinScreen();
+      clearInterval(timerID);
+      console.log("e")
+      }else if(this.planet.lives===0){
+        this.gameEnd = true;
+          buildDeathScreen()
+        clearInterval(timerID);
+      }
     },1000);
+    
    // if (this.timeLeft<0){
       //clearInterval(timerID);
       //this.timeLeft = 0;
@@ -49,13 +61,7 @@ class Game{
       }
     });
   }
-  checkPlanet(){
-    if(this.planet.lives===0){
-      buildDeathSCreen();
-      this.planet.dead= true;
-    }
-  }
-  
+   
   startLoop(){
       setInterval(() => {
       this.asteroids.push (new Asteroid (this.canvas));
@@ -63,7 +69,7 @@ class Game{
     
     this.planet = new Planet(canvas, this.asteroids);
 
-    this.timer();    
+    this.timerSetGameEnd();    
 
     const loop =()=>{
       this.clear();
@@ -71,17 +77,12 @@ class Game{
       this.planet.collision();
       this.draw();
       this.destroyAsteroids();
-      this.checkPlanet();
-
+      
       requestAnimationFrame(loop);
     }
-     
+     if(this.gameEnd === false|| this.planet.dead=== false)
        requestAnimationFrame(loop);
      
-    
-      
-     
- 
   }
 }
  

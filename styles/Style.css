@@ -16,8 +16,8 @@ body {
   justify-content: center;
   padding: 100px;
   background-color: rgb(1, 1, 54);
-   overflow: hidden;
-   background-image: url('/material/starBackground.jpg');
+  overflow: hidden;
+  background-image: url('/material/starBackground.jpg');
 }
 
 section{
