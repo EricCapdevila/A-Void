@@ -20,6 +20,10 @@ body {
   background-image: url('../material/starBackground.jpg');
 }
 
+p span{
+  background-color: black;
+}
+
 section{
   width:80%;
   height:80vh;

@@ -9,7 +9,7 @@ function build(elementAdd){
 
 function buildIntroScreen(){
   const introScreen =  build(
-    '<section id = "Intro" ><h1>A-Void</h1> <p>Your star has left you because she apparently needs more Space. Travel through the void to find a new one!!</p><div><button id = "startButton"><span>START JOURNEY<span> </button><div></section>');
+    '<section id = "Intro" ><h1>A-Void</h1> <p><span>Your star has left you because she apparently needs more Space. Travel through the void to find a new one!!</span></p><div><button id = "startButton"><span>START JOURNEY<span> </button><div></section>');
     const StartButton = document.getElementById("startButton");
   StartButton.addEventListener("click", buildGameScreen);
 }
@@ -19,7 +19,7 @@ function buildGameScreen(){
   const canvas = document.getElementById("canvas");
   
    let game = new Game(canvas);
-
+   
    game.startLoop();
 
    document.addEventListener("keydown", function(event){
@@ -53,10 +53,11 @@ function buildDeathScreen(){
     '<section id = "Death" ><h1>YOU LOST</h1> <p></p><div><button id = "retryButton"><span>RETRY<span> </button><div></section>');
     const retryButton = document.getElementById("retryButton");
   retryButton.addEventListener("click", buildGameScreen);
+  
 
 }
 function buildWinScreen(){
-  const  winScreen = build('<section id = "win"><h1>YOU SURVIVED!</h1> <p>You have found a new star! Shinier and bigger than the old one</p><div><button id = "main-menu"><span>MENU<span> </button><div></section>');
+  const  winScreen = build('<section id = "win"><h1>YOU SURVIVED!</h1> <p><span>You have found a new star! Shinier and bigger than the old one</span></p><div><button id = "main-menu"><span>MENU<span> </button><div></section>');
   const mainMenuButton = document.getElementById("main-menu");
  mainMenuButton.addEventListener("click", buildIntroScreen);
 }

@@ -5,8 +5,8 @@ class Game{
     this.ctx = this.canvas.getContext("2d");
     this.planet = null;
     this.asteroids= [];   
-    this.timeLeft = 10; 
-    this.gameEnd = false;
+    this.timeLeft =10; 
+    this.gameEnd = null;
   }
   timerSetGameEnd(){
     const timerGame = setInterval(() => {
@@ -14,11 +14,10 @@ class Game{
       if(this.timeLeft<0){
          this.gameEnd = true;
           buildWinScreen();
-      clearInterval(timerGame);
+          
       }else if(this.planet.lives===0){
         this.gameEnd = true;
           buildDeathScreen()
-        clearInterval(timerGame);
         }
       },1000);
     }
@@ -69,6 +68,7 @@ class Game{
     },250);
 
     this.planet = new Planet(canvas, this.asteroids);
+   
 
     this.timerSetGameEnd(); 
 
@@ -80,12 +80,12 @@ class Game{
       this.destroyAsteroids();
       console.log(this.gameEnd)
       if(!this.gameEnd){
-        loopID = requestAnimationFrame(loop); 
+        requestAnimationFrame(loop); 
       }
     }
-
-     let loopID = requestAnimationFrame(loop);
-   
+    
+     requestAnimationFrame(loop);
+     
     } 
 }
  
