@@ -5,7 +5,7 @@ class Game{
     this.ctx = this.canvas.getContext("2d");
     this.planet = null;
     this.asteroids= [];   
-    this.timeLeft =10; 
+    this.timeLeft =60; 
     this.gameEnd = false;
   }
   timerSetGameEnd(){
@@ -17,7 +17,7 @@ class Game{
           buildWinScreen();
           clearInterval(timerGame);}
 
-      if(this.planet.lives===0){
+      if(this.planet.lives<1){
         this.gameEnd = true;
           buildDeathScreen()
           clearInterval(timerGame);
