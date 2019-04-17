@@ -67,8 +67,11 @@ class Game{
       const spawnAsteroids = setInterval(() => {
       this.asteroids.push (new Asteroid (this.canvas));
     },250);
+
     this.planet = new Planet(canvas, this.asteroids);
-    this.timerSetGameEnd();    
+
+    this.timerSetGameEnd(); 
+
     const loop =()=>{
       this.clear();
       this.updatePositions();
@@ -76,12 +79,13 @@ class Game{
       this.draw();
       this.destroyAsteroids();
       console.log(this.gameEnd)
-       loopID = requestAnimationFrame(loop); 
+      if(!this.gameEnd){
+        loopID = requestAnimationFrame(loop); 
       }
+    }
+
      let loopID = requestAnimationFrame(loop);
-    // if(this.gameEnd === true){
-     //  cancelAnimationFrame(loopID)
-     //}
+   
     } 
 }
  
