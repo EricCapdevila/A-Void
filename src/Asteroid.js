@@ -38,7 +38,7 @@ class Asteroid{
     this.y = 0;
     this.comingFrom = "" 
     this.position()
-    this.speed = 10;
+    this.speed = 8;
     this.randomDeviation = function(){
       let availableSpeed = [-3,-2 , -1 ,0 , 1, 2, 3];
       return availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
