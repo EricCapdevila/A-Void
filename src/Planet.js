@@ -47,7 +47,14 @@ class Planet{
       const distance = Math.sqrt((this.x - asteroid.x)**2+(this.y-asteroid.y)**2)
     
       if(distance < this.radius/2+asteroid.radius/2){
-        this.lives--;
+        
+        if(asteroid.effect === "health"){
+          this.lives++;
+
+        }else{
+          this.lives--;
+        }
+  
         asteroid.collision= true;
                 
       }
