@@ -9,23 +9,22 @@ class Game{
     this.gameEnd = false;
   }
   timerSetGameEnd(){
-    
     const timerGame = setInterval(() => {
-      --this.timeLeft;
-      if(this.timeLeft<0){
-         this.gameEnd = true;
-         this.planet.song.stop();
-          buildWinScreen();
-          clearInterval(timerGame);}
-
-      if(this.planet.lives<1){
+    --this.timeLeft;
+    if(this.timeLeft<0){
         this.gameEnd = true;
         this.planet.song.stop();
-          buildDeathScreen()
-          clearInterval(timerGame);
-        }
-      },1000);
-    }
+        buildWinScreen();
+        clearInterval(timerGame);
+      }
+    if(this.planet.lives<1){
+      this.gameEnd = true;
+      this.planet.song.stop();
+        buildDeathScreen()
+        clearInterval(timerGame);
+      }
+    },1000);
+  }
   clear(){
     this.ctx.clearRect(0,0,this.canvas.offsetWidth, this.canvas.offsetHeight);
   }
@@ -36,7 +35,6 @@ class Game{
     })
   }
   draw(){
-    
     this.ctx.fillStyle = 'skyblue';
     this.ctx.font = "100px Arial";
     this.ctx.fillText(this.timeLeft , 10, 100);
@@ -51,7 +49,6 @@ class Game{
 
   destroyAsteroids(){
     this.asteroids.forEach((e)=>{
-     
       if(e.collision||e.lifeTime===0){
         let index = this.asteroids.indexOf(e);
         this.asteroids.splice(index,1);

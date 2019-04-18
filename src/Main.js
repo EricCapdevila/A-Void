@@ -8,11 +8,22 @@ function build(elementAdd){
 
 
 function buildIntroScreen(){
-  const introScreen =  build( '<section id = "Intro" ><h1>A-Void</h1> <p><span>Your star has left you because she apparently needs more Space. Travel to find a new one!</span></p><div><button id = "startButton"><span>START JOURNEY<span> </button><button id = "instructions"><span>INSTRUCTIONS</span></button><div></section>');
+  const introScreen =  build( '<section id = "Intro" ><h1 id = "title">A-Void</h1> <p><span>Your star has left you because she apparently needs more Space. Travel to find a new one!</span></p><div id = "buttonsIntro"><button id = "startButton"><span>START JOURNEY<span> </button><button id = "instructions"><span>INSTRUCTIONS</span></button><div></section>');
   const StartButton = document.getElementById("startButton");
   StartButton.addEventListener("click", buildGameScreen);
   const instructionsButton = document.getElementById("instructions");
   instructionsButton.addEventListener("click", buildInstructionsScreen);
+  document.getElementById("title").animate([
+    {transform: 'translateY(-50px)'},
+    {transform: 'translateX( 50px)'},
+    {transform: 'translateY( 50px)'},
+    {transform: 'translateX(-50px)'},
+    {transform: 'translateY(-50px)'}
+  ], {
+    duration: 2000,
+    iterations: Infinity
+  })
+
 }
 
 function buildInstructionsScreen(){
