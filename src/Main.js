@@ -16,11 +16,11 @@ function buildIntroScreen(){
 }
 
 function buildInstructionsScreen(){
- const instructionScreen = build('<section id = "instructions"><div><button id = "mainMenu"></div><div><p>Move in all directions</p> <img src = "./material/arrows.png" width= "80px" height = "80px"><p> Collect starts to regain health</p><img src = "./material/star.png" width = "80px" height = "80px"><p>Survive one minute to win<p></div><div><button id = "startButton"><div></section>')
- const StartButton = document.getElementById("startButton");
- StartButton.addEventListener("click", buildGameScreen);
- const mainMenu = document.getElementById("mainMenu");
- StartButton.addEventListener("click", buildIntroScreen);
+ const instructionScreen = build('<section id = "instructions"><div><button id = "back">BACK</button></div><div><p>Move in all directions</p> <img src = "./material/arrows.png" width= "80px" height = "80px"><p> Collect stars to regain health</p><img src = "./material/star.png" width = "80px" height = "80px"><p>Survive one minute to win<p></div><div><button id = "go">GO</button><div></section>')
+ const goButton = document.getElementById("go");
+ goButton.addEventListener("click", buildGameScreen);
+ const goBack = document.getElementById("back");
+ goBack.addEventListener("click", buildIntroScreen);
 }
 
 function buildGameScreen(){
