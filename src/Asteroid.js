@@ -3,16 +3,17 @@ class Asteroid{
   constructor(canvas){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.radius = 13;
+    this.radius = 80;
     this.position = function (){
       let randomY = Math.floor((Math.random()*this.canvas.height - this.radius));
       let randomX = Math.floor((Math.random()*this.canvas.width - this.radius));
       
-      let top = [randomX, -10];
-      let bottom = [randomX, 160];
-      let left = [-10, randomY];
-      let right = [310, randomY];
+      let top = [randomX, -this.radius];
+      let bottom = [randomX, this.canvas.height+ this.radius];
+      let left = [0-this.radius, randomY];
+      let right = [this.canvas.width + this.radius, randomY];
       
+    
       let spawnPosibilities = [top, bottom, left, right]
       let position = spawnPosibilities[Math.floor(Math.random()*spawnPosibilities.length)];
       
@@ -27,6 +28,8 @@ class Asteroid{
         this.comingFrom = "right"
       }
      
+     
+
       this.x = position[0];
       this.y = position[1];
     
@@ -35,9 +38,9 @@ class Asteroid{
     this.y = 0;
     this.comingFrom = "" 
     this.position()
-    this.speed = 2.5;
+    this.speed = 10;
     this.randomDeviation = function(){
-      let availableSpeed = [-1.5 ,-1 , -0.5 ,0 , 0.5, 1, 1.5];
+      let availableSpeed = [-3,-2 , -1 ,0 , 1, 2, 3];
       return availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
     }
     this.deviation = this.randomDeviation();

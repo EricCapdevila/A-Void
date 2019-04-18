@@ -34,12 +34,13 @@ class Game{
     })
   }
   draw(){
+    
     this.ctx.fillStyle = 'skyblue';
-    this.ctx.font = "15px Arial";
-    this.ctx.fillText(this.timeLeft , 10, 15);
+    this.ctx.font = "100px Arial";
+    this.ctx.fillText(this.timeLeft , 10, 100);
     this.ctx.fillStyle = 'skyblue';
-    this.ctx.font = "15px Arial";
-    this.ctx.fillText("♥" + this.planet.lives , 10, 30);
+    this.ctx.font = "100px Arial";
+    this.ctx.fillText("♥" + this.planet.lives , 10, 200);
     this.planet.draw();
     this.asteroids.forEach(function (asteroid){
       asteroid.draw(); 
@@ -80,13 +81,11 @@ class Game{
       this.planet.collision();
       this.draw();
       this.destroyAsteroids();
-      console.log(this.gameEnd)
       if(!this.gameEnd){
         requestAnimationFrame(loop); 
       }
     }
-   // this.gameEnd = false;
-    //console.log(this.gameEnd)
+  
      requestAnimationFrame(loop);
     } 
 }

@@ -15,7 +15,7 @@ function buildIntroScreen(){
 }
 
 function buildGameScreen(){
-  const  gameScreen = build('<canvas id = "canvas" ></canvas>');   
+  const  gameScreen = build('<div id = canvas-wraper><canvas id = "canvas" width= "1400" height = "700"></canvas></div>')
   const canvas = document.getElementById("canvas");
    
    let game = new Game(canvas);
@@ -25,16 +25,16 @@ function buildGameScreen(){
    document.addEventListener("keydown", function(event){
     switch (event.keyCode){
       case 37:
-        game.planet.speedX = -2;
+        game.planet.speedX = -7;
       break;
       case 38:
-        game.planet.speedY = -2;
+        game.planet.speedY = -7;
       break;
       case 39:
-      game.planet.speedX = 2;
+      game.planet.speedX = 7;
       break;
       case 40:
-      game.planet.speedY = 2;
+      game.planet.speedY = 7;
       break;
     } 
     })
