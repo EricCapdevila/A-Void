@@ -16,7 +16,7 @@ function buildIntroScreen(){
 }
 
 function buildInstructionsScreen(){
- const instructionScreen = build('<section id = "instructions"><div><button id = "back">BACK</button></div><div><p>Move in all directions</p> <img src = "./material/arrows.png" width= "80px" height = "80px"><p> Collect stars to regain health</p><img src = "./material/star.png" width = "80px" height = "80px"><p>Survive one minute to win<p></div><div><button id = "go">GO</button><div></section>')
+ const instructionScreen = build('<section id = "instructions"><div><button id = "back"><span>BACK</span></button></div><div><p>Move in all directions</p> <img src = "./material/arrows.png" width= "80px" height = "80px"><p> Collect stars to regain health</p><img src = "./material/star.png" width = "80px" height = "80px"><p>Survive one minute to win<p></div><div><button id = "go"><span>GO</span></button><div></section>')
  const goButton = document.getElementById("go");
  goButton.addEventListener("click", buildGameScreen);
  const goBack = document.getElementById("back");
@@ -58,7 +58,7 @@ function buildGameScreen(){
 
 
 function buildDeathScreen(){
-
+  playLose()
   const deathScreen =  build(
     '<section id = "Death" ><h1>YOU LOST</h1> <p></p><div><button id = "retryButton"><span>RETRY<span> </button><div></section>');
     const retryButton = document.getElementById("retryButton");

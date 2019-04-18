@@ -14,7 +14,7 @@ body {
   width:100%;
   display: flex;
   justify-content: center;
-  padding: 100px;
+  padding: 7%;
   background-color: rgb(1, 1, 54);
   overflow: hidden;
   background-image: url('../material/starBackground.jpg');
@@ -34,33 +34,43 @@ section{
   padding: 3%;
   background-color: rgba(0, 0, 0, 0.507);
 }
-
+p{
+margin: 5% 0 5% 0;
+}
  h1, p, div{
-  width: 100%;
-  text-align: center;
+width: 100%;
+text-align: center;
 }
 #instructions{
  display:flexbox;
  flex-flow: row nowrap;
+ 
+}
 
+#instructions div button{
+  margin-top: 60%;
+  height: 17%;
+  border-radius: 300px;
+  width: 30%;
+  height: 17%;
 }
 
 button{
   border: rgb(51, 147, 202) solid 1px;
   background-color: skyblue;
-  width: 30%;
-  height: 30%;
+  width: 25%;
+  height: 35%;
   border-radius: 30px;
-  margin: 0 5%;
+  margin: 0 3%; 
+  
 }
 
 button span{
   color:rgb(2, 2, 95);
   font-weight: bold;
-  font-size: 3em;
+  font-size: 2.5em;
   display:block;
 }
-
 
 #canvas-wraper{
   width:100%;

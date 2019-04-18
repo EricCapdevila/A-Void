@@ -12,7 +12,7 @@ class Planet{
     this.asteroids = array; 
     this.dead = false;
   }
-
+  
   draw(){
     let planet = new Image;
     planet.src = './material/planetEarth.png';
@@ -48,11 +48,14 @@ class Planet{
     
       if(distance < this.radius/2+asteroid.radius/2){
         
+        
         if(asteroid.effect === "health"){
           this.lives++;
+          playStar()
 
         }else{
           this.lives--;
+          playImpact()
         }
   
         asteroid.collision= true;
