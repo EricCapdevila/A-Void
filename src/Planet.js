@@ -3,7 +3,7 @@ class Planet{
   constructor(canvas,array){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.radius = 100;
+    this.radius = 90;
     this.lives = 5;
     this.x = this.canvas.width/2;
     this.y = this.canvas.height/2;

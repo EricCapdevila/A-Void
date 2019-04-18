@@ -29,15 +29,20 @@ section{
   height:80vh;
   display: flex;
   flex-wrap: wrap;
-  justify-items: center;
-  font-size: 3em;
-  padding: 5%;
+  justify-content: center;
+  font-size: 2em;
+  padding: 3%;
   background-color: rgba(0, 0, 0, 0.507);
 }
 
  h1, p, div{
   width: 100%;
   text-align: center;
+}
+#instructions{
+ display:flexbox;
+ flex-flow: row nowrap;
+
 }
 
 button{
@@ -46,6 +51,7 @@ button{
   width: 40%;
   height: 40%;
   border-radius: 30px;
+  margin: 0 5%;
 }
 
 button span{
@@ -54,6 +60,7 @@ button span{
   font-size: 3em;
   display:block;
 }
+
 
 #canvas-wraper{
   width:100%;

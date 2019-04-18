@@ -8,10 +8,19 @@ function build(elementAdd){
 
 
 function buildIntroScreen(){
-  const introScreen =  build(
-    '<section id = "Intro" ><h1>A-Void</h1> <p><span>Your star has left you because she apparently needs more Space. Travel through the void to find a new one!!</span></p><div><button id = "startButton"><span>START JOURNEY<span> </button><div></section>');
-    const StartButton = document.getElementById("startButton");
+  const introScreen =  build( '<section id = "Intro" ><h1>A-Void</h1> <p><span>Your star has left you because she apparently needs more Space. Travel to find a new one!</span></p><div><button id = "startButton"><span>START JOURNEY<span> </button><button id = "instructions"><span>INSTRUCTIONS</span></button><div></section>');
+  const StartButton = document.getElementById("startButton");
   StartButton.addEventListener("click", buildGameScreen);
+  const instructionsButton = document.getElementById("instructions");
+  instructionsButton.addEventListener("click", buildInstructionsScreen);
+}
+
+function buildInstructionsScreen(){
+ const instructionScreen = build('<section id = "instructions"><div><button id = "mainMenu"></div><div><p>Move in all directions</p> <img src = "./material/arrows.png" width= "80px" height = "80px"><p> Collect starts to regain health</p><img src = "./material/star.png" width = "80px" height = "80px"><p>Survive one minute to win<p></div><div><button id = "startButton"><div></section>')
+ const StartButton = document.getElementById("startButton");
+ StartButton.addEventListener("click", buildGameScreen);
+ const mainMenu = document.getElementById("mainMenu");
+ StartButton.addEventListener("click", buildIntroScreen);
 }
 
 function buildGameScreen(){
@@ -48,7 +57,7 @@ function buildGameScreen(){
    }
 
 
-function buildDeathScreen(game){
+function buildDeathScreen(){
 
   const deathScreen =  build(
     '<section id = "Death" ><h1>YOU LOST</h1> <p></p><div><button id = "retryButton"><span>RETRY<span> </button><div></section>');

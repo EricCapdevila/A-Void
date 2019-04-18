@@ -37,7 +37,7 @@ class PowerUp{
     this.position()
     this.speed = 5;
     this.randomDeviation = function(){
-      let availableSpeed = [-3,-2 , -1 ,0 , 1, 2, 3];
+      let availableSpeed = [-1,-0.5 , 0 ,0.5 , 1];
       return availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
     }
     this.deviation = this.randomDeviation();
@@ -47,8 +47,7 @@ class PowerUp{
         --this.lifeTime;
       },1000);
     this.effect = "health"
-   
-  }
+    }
 
   draw (){
     let star = new Image(15, 15);
@@ -70,7 +69,6 @@ class PowerUp{
       this.x = this.x + this.deviation;
     }
   }
-
      
   }
 
