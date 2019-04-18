@@ -11,6 +11,7 @@ class Planet{
     this.speedY = 0;
     this.asteroids = array; 
     this.dead = false;
+    this.song = new sound("./material/song.mp3");
   }
   
   draw(){
@@ -63,6 +64,10 @@ class Planet{
       }
     });
     }
+
+  stopSong(){
+    this.song.stop();
+  }
   }
  
 

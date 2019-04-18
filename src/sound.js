@@ -14,16 +14,28 @@ function sound(src) {
 }
 
 function playLose(){
-  let impact = new sound("./material/lose.mp3");
-  impact.play();
+  let lose = new sound("./material/lose.mp3");
+  lose.play();
 }
 
 function playImpact(){
-  let impact = new sound("./material/impact.mp3");
+  let impact= new sound("./material/impact.mp3");
   impact.play();
 }
 
 function playStar(){
-  let impact = new sound("./material/star.mp3");
-  impact.play();
+  let star = new sound("./material/star.mp3");
+  star.play();
 }
+
+function playWin(){
+  let win= new sound("./material/win.mp3");
+  win.play();
+}
+
+function playSong(){
+  let song = new sound("./material/song.mp3");
+  song.play();
+}
+
+

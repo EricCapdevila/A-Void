@@ -24,13 +24,14 @@ function buildInstructionsScreen(){
 }
 
 function buildGameScreen(){
+ 
   const  gameScreen = build('<div id = canvas-wraper><canvas id = "canvas" width= "1100" height = "800"></canvas></div>')
   const canvas = document.getElementById("canvas");
    
    let game = new Game(canvas);
    
    game.startLoop();
-
+   game.planet.song.play()
    document.addEventListener("keydown", function(event){
     switch (event.keyCode){
       case 37:
@@ -57,8 +58,9 @@ function buildGameScreen(){
    }
 
 
-function buildDeathScreen(){
-  playLose()
+function buildDeathScreen(game){
+  
+  playLose();
   const deathScreen =  build(
     '<section id = "Death" ><h1>YOU LOST</h1> <p></p><div><button id = "retryButton"><span>RETRY<span> </button><div></section>');
     const retryButton = document.getElementById("retryButton");
@@ -66,8 +68,9 @@ function buildDeathScreen(){
   
 
 }
-function buildWinScreen(){
+function buildWinScreen(game){
   
+  playWin();
   const  winScreen = build('<section id = "win"><h1>YOU SURVIVED!</h1> <p><span>You have found a new star! Shinier and bigger than the old one</span></p><div><button id = "main-menu"><span>MENU<span> </button><div></section>');
   const mainMenuButton = document.getElementById("main-menu");
  mainMenuButton.addEventListener("click", buildIntroScreen);
