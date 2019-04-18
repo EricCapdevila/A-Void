@@ -50,7 +50,7 @@ text-align: center;
 #instructions div button{
   margin-top: 60%;
   height: 17%;
-  border-radius: 300px;
+  border-radius: 50%;
   width: 30%;
   height: 17%;
 }
@@ -65,7 +65,15 @@ button{
   height: 35%;
   border-radius: 30px;
   margin: 0 3%; 
-    
+}
+
+button:hover{
+  border: rgb(87, 207, 255) solid 5px;
+  background-color: rgb(93, 210, 221);
+  width: 25%;
+  height: 35%;
+  border-radius: 30px;
+  margin: 0 3%; 
 }
 
 button span{
@@ -75,6 +83,7 @@ button span{
   display:block;
   text-align: center;
 }
+
 #buttonsIntro{
  display: flex;
  height: 30%;
@@ -95,6 +104,10 @@ justify-content: center;
   justify-content: center;
   align-content: center;
   
+}
+
+#Death h1{
+  margin-top: 15%;
 }
 
 
