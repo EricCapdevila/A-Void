@@ -3,7 +3,7 @@ class Asteroid{
   constructor(canvas){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.radius = 80;
+    this.radius = 70;
     this.position = function (){
       let randomY = Math.floor((Math.random()*this.canvas.height - this.radius));
       let randomX = Math.floor((Math.random()*this.canvas.width - this.radius));

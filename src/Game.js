@@ -72,7 +72,7 @@ class Game{
     },250);
       const spawnPowerUps = setInterval(() => {
       this.asteroids.push (new PowerUp(this.canvas));
-    },5000);
+    },10000);
 
     this.planet = new Planet(canvas, this.asteroids);
    

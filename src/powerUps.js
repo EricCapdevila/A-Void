@@ -35,7 +35,7 @@ class PowerUp{
     this.y = 0;
     this.comingFrom = "" 
     this.position()
-    this.speed = 6;
+    this.speed = 5;
     this.randomDeviation = function(){
       let availableSpeed = [-3,-2 , -1 ,0 , 1, 2, 3];
       return availableSpeed[Math.floor(Math.random()* availableSpeed.length)];
