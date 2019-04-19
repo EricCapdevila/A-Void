@@ -55,7 +55,7 @@ class Asteroid{
   draw (){
     let asteroid = new Image(15, 15);
     asteroid.src = './material/asteroid.png';
-    this.ctx.drawImage(asteroid, this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
+    this.ctx.drawImage(asteroid, this.x, this.y, this.radius, this.radius);
   }
   move(){
     if (this.comingFrom === "left"){;

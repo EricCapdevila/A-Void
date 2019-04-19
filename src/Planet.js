@@ -17,7 +17,10 @@ class Planet{
   draw(){
     let planet = new Image;
     planet.src = './material/planetEarth.png';
-    this.ctx.drawImage(planet, this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
+    //ctx.drawImage(image, dx, dy, dWidth, dHeight);
+    //this.ctx.drawImage(planet, this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
+    this.ctx.drawImage(planet, this.x, this.y, this.radius, this.radius);
+    
   }
   move(){
     if(this.x > this.canvas.width-this.radius){
@@ -36,24 +39,20 @@ class Planet{
     }
   }
   collision(){
-    let leftSide = this.x -this.radius/2;
-    let topSide = this.y - this.radius/2;
-    let rightSide = this.x + this.radius/2;
-    let downSide = this.y + this.radius/2;
-    
+    let leftSide = this.x - this.radius;
+    let topSide = this.y -  this.radius;
+    let rightSide = this.x + this.radius;
+    let downSide = this.y + this.radius;
  
     this.asteroids.forEach((asteroid,index)=>{
-      //console.log(leftSide < asteroid.x + asteroid.radius/2 && rightSide > asteroid.x - asteroid.radius/2)
-      //console.log(topSide > asteroid.y + asteroid.radius/2 && downSide < asteroid.y - asteroid.radius/2)
+      
       const distance = Math.sqrt((this.x - asteroid.x)**2+(this.y-asteroid.y)**2)
     
       if(distance < this.radius/2+asteroid.radius/2){
-        
-        
+                
         if(asteroid.effect === "health"){
           this.lives++;
           playStar()
-
         }else{
           this.lives--;
           playImpact()

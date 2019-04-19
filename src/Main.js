@@ -36,7 +36,7 @@ function buildInstructionsScreen(){
 
 function buildGameScreen(){
  
-  const  gameScreen = build('<div id = canvas-wraper><canvas id = "canvas" width= "1100" height = "800"></canvas></div>')
+  const  gameScreen = build('<div id="canvas-wraper"><canvas id="canvas" width="1100" height="800" ></canvas></div>')
   const canvas = document.getElementById("canvas");
    
    let game = new Game(canvas);

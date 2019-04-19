@@ -67,7 +67,7 @@ button{
   width: 25%;
   height: 35%;
   border-radius: 30px;
-  margin: 0 3%; 
+  
 }
 
 button:hover{
@@ -82,9 +82,10 @@ button:hover{
 button span{
   color: black;
   font-weight: bold;
-  font-size: 100%;
+  font-size: 2em;
   display:block;
   text-align: center;
+  
 }
 
 button:hover span{

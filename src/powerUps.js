@@ -52,7 +52,7 @@ class PowerUp{
   draw (){
     let star = new Image(15, 15);
     star.src = './material/star.png';
-    this.ctx.drawImage(star, this.x - this.radius/2, this.y - this.radius/2, this.radius, this.radius);
+    this.ctx.drawImage(star, this.x, this.y, this.radius, this.radius);
   }
   move(){
     if (this.comingFrom === "left"){;
