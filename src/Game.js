@@ -26,7 +26,7 @@ class Game{
     },1000);
   }
   clear(){
-    this.ctx.clearRect(0,0,this.canvas.offsetWidth, this.canvas.offsetHeight);
+    this.ctx.clearRect(0,0,this.canvas.width, this.canvas.height);
   }
   updatePositions(){
     this.planet.move();
