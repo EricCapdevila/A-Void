@@ -68,7 +68,7 @@ button{
 }
 
 button:hover{
-  border: rgb(87, 207, 255) solid 5px;
+  border: rgb(248, 237, 172) solid 2px;
   background-color: rgb(93, 210, 221);
   width: 25%;
   height: 35%;
@@ -78,6 +78,14 @@ button:hover{
 
 button span{
   color: black;
+  font-weight: bold;
+  font-size: 2.5em;
+  display:block;
+  text-align: center;
+}
+
+button:hover span{
+  color:rgb(248, 237, 172);
   font-weight: bold;
   font-size: 2.5em;
   display:block;
